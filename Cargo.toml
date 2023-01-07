@@ -1,0 +1,38 @@
+[package]
+name = "tensor-flight-systems"
+version = "0.1.0"
+authors = ["Your Name <your@email.com>"]
+description = "A library for implementing flight systems using tensor technology."
+license = "MIT"
+repository = "https://github.com/your-username/tensor-flight-systems"
+
+[dependencies]
+ndarray = "0.14"
+tensorflow = "0.23"
+
+[dependencies.tensorflightsystems-core]
+path = "src/tensorflightsystems-core"
+
+[dependencies.tensorflightsystems-applications]
+path = "src/tensorflightsystems-applications"
+
+[dependencies.tensorflightsystems-documentation]
+path = "src/tensorflightsystems-documentation"
+
+[dependencies.tensorflightsystems-sensors]
+path = "src/tensorflightsystems-sensors"
+
+[dependencies.tensorflightsystems-control]
+path = "src/tensorflightsystems-control"
+
+[dependencies.tensorflightsystems-simulation]
+path = "src/tensorflightsystems-simulation"
+
+[dependencies.tensorflightsystems-hardware]
+path = "src/tensorflightsystems-hardware"
+
+[dependencies.tensorflightsystems-data]
+path = "src/tensorflightsystems-data"
+
+[dependencies.tensorflightsystems-integration]
+path = "src/tensorflightsystems-integration"

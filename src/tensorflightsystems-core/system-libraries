@@ -1,0 +1,26 @@
+extern crate scikit;
+
+use scikit::preprocessing::{MinMaxScaler, StandardScaler};
+use scikit::linalg::{DenseMatrix, Matrix};
+use tensorflow::Tensor;
+
+pub fn normalize_data(data: &DenseMatrix<f32>) -> DenseMatrix<f32> {
+    let scaler = MinMaxScaler::default();
+    scaler.fit_transform(data)
+}
+
+pub fn standardize_data(data: &DenseMatrix<f32>) -> DenseMatrix<f32> {
+    let scaler = StandardScaler::default();
+    scaler.fit_transform(data)
+}
+
+pub fn tensor_to_matrix(tensor: &Tensor<f32>) -> Matrix<f32> {
+    let shape = tensor.shape().to_vec();
+    let data = tensor.to_vec();
+    Matrix::new(shape[0], shape[1], data)
+}
+
+pub fn matrix_to_tensor(matrix: &Matrix<f32>) -> Tensor<f32> {
+    let data = matrix.data().to_vec();
+    Tensor::new(&matrix.shape()).with_values(data).unwrap()
+}
